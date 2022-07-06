@@ -8,7 +8,7 @@ import { SearchComponent } from './search/search.component';
 const routes: Routes = [
   { path: "favorites", component: FavoritesComponent },
   { path: "recipes", component: RecipesComponent },
-  { path: "seatch", component: SearchComponent },
+  { path: "search", component: SearchComponent },
   { path: "", redirectTo: "/recipes", pathMatch: "full" }
 ];
 

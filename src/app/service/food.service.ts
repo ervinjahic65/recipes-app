@@ -8,7 +8,7 @@ const API_KEY = "4c8b0a0e93264adb8840cdcc6d0b95a1";
   providedIn: 'root'
 })
 export class FoodService {
-  private url = "https://api.spoonacular.com/recipes/complexSearch?";
+  private url = "https://api.spoonacular.com/recipes/716429/information?apiKey=4c8b0a0e93264adb8840cdcc6d0b95a1&includeNutrition=truettps://api.spoonacular.com/recipes/complexSearch?";
   private favorites: any[] = [];
 
   constructor(private httpClient: HttpClient) { }
