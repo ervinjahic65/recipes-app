@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { FoodService } from '../service/food.service';
 
 @Component({
@@ -6,22 +6,18 @@ import { FoodService } from '../service/food.service';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css']
 })
-export class RecipesComponent implements OnInit {
-  @Input() recipes!: any[];
+export class RecipesComponent {
+  name = "Angular";
 
-  query: string = "";
-  favorites: boolean = false;
-  cuisine!: string;
-  diet!: string;
-  index!: number;
-  clicked!: boolean;
-  math = Math;
+  data: any;
 
-  constructor(private foodService: FoodService) { }
+  constructor(private service: FoodService) { }
 
   ngOnInit(): void {
-    console.log(this.favorites);
-    this.foodService.getSearch(this.query, this.cuisine, this.diet);
+    this.service.getSearch()
+      .subscribe(response => {
+        this.data = response;
+      });
   }
 
 }
